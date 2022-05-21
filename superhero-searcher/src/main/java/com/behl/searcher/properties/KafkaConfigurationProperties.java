@@ -9,6 +9,17 @@ import lombok.Data;
 public class KafkaConfigurationProperties {
 
 	private String topicName;
-	private String deadLetterTopicName;
+	private DeadLetter deadLetter = new DeadLetter();
+
+	@Data
+	public class DeadLetter {
+		private String topicName;
+		private Integer retries;
+		/***
+		 * Delay between messages that fail to publish in milliseconds
+		 */
+		private Long delay;
+
+	}
 
 }
