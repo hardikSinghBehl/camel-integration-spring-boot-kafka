@@ -20,7 +20,7 @@ public class SuperHeroInformationConsumptionRoute extends RouteBuilder {
 	@Override
 	public void configure() {
 		from("kafka:" + kafkaConfigurationProperties.getTopicName()).unmarshal(JsonDataFormatter.get(SuperHero.class))
-				.to("log:" + SuperHeroInformationConsumptionRoute.class);
+				.end();
 	}
 
 }
