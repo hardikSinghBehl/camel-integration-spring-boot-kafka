@@ -22,6 +22,20 @@
 		<camel.version>3.17.0</camel.version>
 	</properties>
 
+	<developers>
+		<developer>
+			<id>hardikSinghBehl</id>
+			<name>Hardik Singh Behl</name>
+			<email>behl.hardiksingh@gmail.com</email>
+			<url>https://www.linkedin.com/in/hardiksinghbehl</url>
+			<roles>
+				<role>Backend Developer</role>
+				<role>Java Web Developer</role>
+			</roles>
+			<timezone>UTC +5:30</timezone>
+		</developer>
+	</developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
