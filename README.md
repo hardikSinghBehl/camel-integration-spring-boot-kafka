@@ -1,7 +1,14 @@
 ## Apache Camel Integration with Spring-boot and Kafka
 ### Services
 * **superhero-searcher** (acts as a Kafka producer)
+
+```
+Application that searches for superheroes disguised as normal human beings, collects their information and publishes it to a kafka topic through a Camel Route
+```
 * **superhero-registry** (acts as a Kafka consumer)
+```
+Application that consumes superhero information from configured Kafka topic using a Camel Route and Stores it in an in-memory DB
+```
 ### Flow 
 * Superhero-searcher microservice creates a SuperHero POJO using [Java-faker](https://github.com/DiUS/java-faker) and publishes the created object to a Kafka topic `superhero-information` after every 5 seconds.
 * A Dead letter topic `superhero-information-dlx` is configured for messages that are failed to published in the main Kafka topic 
