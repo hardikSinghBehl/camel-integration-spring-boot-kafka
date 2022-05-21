@@ -9,5 +9,6 @@ import lombok.Data;
 public class KafkaConfigurationProperties {
 
 	private String topicName;
+	private String deadLetterTopicName;
 
 }

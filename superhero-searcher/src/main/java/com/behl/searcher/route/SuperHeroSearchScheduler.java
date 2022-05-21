@@ -23,6 +23,8 @@ public class SuperHeroSearchScheduler extends RouteBuilder {
 
 	@Override
 	public void configure() {
+		errorHandler(deadLetterChannel("kafka:" + kafkaConfigurationProperties.getDeadLetterTopicName()));
+
 		from("timer:superhero-search-scheduler?period=5000").bean(superHeroSearcher).process(messageBodyLogger)
 				.marshal(JsonDataFormatter.get(SuperHero.class))
 				.to("kafka:" + kafkaConfigurationProperties.getTopicName());
